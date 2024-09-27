@@ -92,9 +92,6 @@ class WeakROIHeads(torch.nn.Module):
             ],
             dim=0,
         )
-        img_classes_oh = torch.cat(
-            (img_classes_oh, img_classes_oh.new_ones((len(targets), 1))), dim=1
-        )
         return img_classes, img_classes_oh
 
     def _sample_proposals(
